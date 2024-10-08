@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://c2a3po05p28d5"]
 
 [ext_resource type="PackedScene" uid="uid://dkxvpemqtlv7v" path="res://Scenes/latest_input.tscn" id="2_7bd4g"]
-[ext_resource type="Texture2D" uid="uid://cxu5ixys8wuq7" path="res://icon.svg" id="2_lj1n6"]
+[ext_resource type="PackedScene" uid="uid://b7jwhu1oqw4rl" path="res://Scenes/the_godot.tscn" id="2_mgjh4"]
 
 [node name="Main" type="Node2D"]
 
@@ -18,8 +18,6 @@ offset_right = 40.0
 offset_bottom = 23.0
 
 [node name="LatestInput" parent="." instance=ExtResource("2_7bd4g")]
-position = Vector2(302, 627)
+position = Vector2(541, 618)
 
-[node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(578, 290)
-texture = ExtResource("2_lj1n6")
+[node name="TheGodot" parent="." instance=ExtResource("2_mgjh4")]

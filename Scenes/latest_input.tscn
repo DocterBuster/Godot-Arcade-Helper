@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://latest_input.gd" id="1_oep6x"]
 
 [node name="LatestInput" type="Node2D"]
+scale = Vector2(1.8, 1.8)
 script = ExtResource("1_oep6x")
 
 [node name="Delay" type="Timer" parent="."]
@@ -14,7 +15,7 @@ offset_left = -293.0
 offset_top = -42.0
 offset_right = -182.0
 offset_bottom = -19.0
-text = "Latest Input:"
+text = "Latest Input: (This tells you what Godot can map in the Input list!)"
 metadata/_edit_use_anchors_ = true
 
 [node name="InputAction" type="Button" parent="."]
