@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=3 uid="uid://dkxvpemqtlv7v"]
+
+[ext_resource type="Script" path="res://latest_input.gd" id="1_oep6x"]
+
+[node name="LatestInput" type="Node2D"]
+script = ExtResource("1_oep6x")
+
+[node name="Delay" type="Timer" parent="."]
+wait_time = 0.3
+one_shot = true
+
+[node name="Label" type="Label" parent="."]
+offset_left = -293.0
+offset_top = -42.0
+offset_right = -182.0
+offset_bottom = -19.0
+text = "Latest Input:"
+metadata/_edit_use_anchors_ = true
+
+[node name="InputAction" type="Button" parent="."]
+anchors_preset = -1
+anchor_right = 9.26829
+offset_left = -297.0
+offset_top = -19.0
+offset_right = 321.0
+offset_bottom = 12.0
+text = "(Press any Input Source)"
+alignment = 0
+metadata/_edit_use_anchors_ = true

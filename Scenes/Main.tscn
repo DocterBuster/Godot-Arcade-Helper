@@ -1,6 +1,9 @@
-[gd_scene format=3 uid="uid://c2a3po05p28d5"]
+[gd_scene load_steps=3 format=3 uid="uid://c2a3po05p28d5"]
 
-[node name="Node2D" type="Node2D"]
+[ext_resource type="PackedScene" uid="uid://dkxvpemqtlv7v" path="res://Scenes/latest_input.tscn" id="2_7bd4g"]
+[ext_resource type="Texture2D" uid="uid://cxu5ixys8wuq7" path="res://icon.svg" id="2_lj1n6"]
+
+[node name="Main" type="Node2D"]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -13,3 +16,10 @@ offset_bottom = 40.0
 [node name="Label" type="Label" parent="CanvasLayer"]
 offset_right = 40.0
 offset_bottom = 23.0
+
+[node name="LatestInput" parent="." instance=ExtResource("2_7bd4g")]
+position = Vector2(302, 627)
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(578, 290)
+texture = ExtResource("2_lj1n6")
