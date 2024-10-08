@@ -18,3 +18,10 @@ config/icon="res://icon.svg"
 [display]
 
 window/stretch/mode="viewport"
+
+[input]
+
+t={
+"deadzone": 0.5,
+"events": []
+}

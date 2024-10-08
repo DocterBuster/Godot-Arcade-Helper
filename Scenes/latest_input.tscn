@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dkxvpemqtlv7v"]
 
-[ext_resource type="Script" path="res://latest_input.gd" id="1_oep6x"]
+[ext_resource type="Script" path="res://Scripts/latest_input.gd" id="1_oep6x"]
 
 [node name="LatestInput" type="Node2D"]
 scale = Vector2(1.8, 1.8)

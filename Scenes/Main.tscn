@@ -1,5 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://c2a3po05p28d5"]
+[gd_scene load_steps=4 format=3 uid="uid://c2a3po05p28d5"]
 
+[ext_resource type="PackedScene" uid="uid://dqctdvcaijwbg" path="res://Scenes/gamepad_type.tscn" id="1_7lysn"]
 [ext_resource type="PackedScene" uid="uid://dkxvpemqtlv7v" path="res://Scenes/latest_input.tscn" id="2_7bd4g"]
 [ext_resource type="PackedScene" uid="uid://b7jwhu1oqw4rl" path="res://Scenes/the_godot.tscn" id="2_mgjh4"]
 
@@ -16,6 +17,9 @@ offset_bottom = 40.0
 [node name="Label" type="Label" parent="CanvasLayer"]
 offset_right = 40.0
 offset_bottom = 23.0
+
+[node name="GamepadType" parent="." instance=ExtResource("1_7lysn")]
+position = Vector2(87, 441)
 
 [node name="LatestInput" parent="." instance=ExtResource("2_7bd4g")]
 position = Vector2(541, 618)

@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://dqctdvcaijwbg"]
+
+[ext_resource type="Script" path="res://gamepad_type.gd" id="1_stxvg"]
+
+[node name="GamepadType" type="Node2D"]
+scale = Vector2(1.8, 1.8)
+script = ExtResource("1_stxvg")
+
+[node name="Button" type="Button" parent="."]
+offset_left = -48.0
+offset_top = -3.0
+offset_right = 88.0
+offset_bottom = 6.0
+text = "(Gamepad Type Here)"
+
+[node name="Label" type="Label" parent="."]
+offset_left = -46.6667
+offset_top = -32.2222
+offset_right = 86.3333
+offset_bottom = -9.22222
+text = "The Gamepad ID: [Input.get_joy_guid(0)]"
