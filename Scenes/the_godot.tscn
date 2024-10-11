@@ -1,6 +1,22 @@
-[gd_scene load_steps=5 format=3 uid="uid://b7jwhu1oqw4rl"]
+[gd_scene load_steps=14 format=3 uid="uid://b7jwhu1oqw4rl"]
 
+[ext_resource type="Script" path="res://Scripts/(player)the_godot.gd" id="1_5ctyl"]
 [ext_resource type="Texture2D" uid="uid://cxu5ixys8wuq7" path="res://icon.svg" id="1_swh68"]
+
+[sub_resource type="Animation" id="Animation_xlm8u"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0333333),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_67kba"]
 resource_name = "loop"
@@ -19,28 +35,183 @@ tracks/0/keys = {
 "values": [false, true, false]
 }
 
-[sub_resource type="Animation" id="Animation_xlm8u"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Label:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0.0333333),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_0nh5i"]
 _data = {
 "RESET": SubResource("Animation_xlm8u"),
 "loop": SubResource("Animation_67kba")
 }
 
+[sub_resource type="Animation" id="Animation_5qp0c"]
+resource_name = "hover_bob"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TheGodot:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0333333, 2.03333),
+"transitions": PackedFloat32Array(-2, -2),
+"update": 0,
+"values": [Vector2(578, 290), Vector2(578, 270)]
+}
+
+[sub_resource type="Animation" id="Animation_3jk25"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TheGodot:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(578, 290)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_w12jk"]
+_data = {
+"RESET": SubResource("Animation_3jk25"),
+"hover_bob": SubResource("Animation_5qp0c")
+}
+
+[sub_resource type="Animation" id="Animation_v4s1v"]
+resource_name = "left_press"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TheGodot:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0333333, 0.133333, 0.266667),
+"transitions": PackedFloat32Array(0.5, 0.5, 0.5),
+"update": 0,
+"values": [0.0, -1.309, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TheGodot:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.266667),
+"transitions": PackedFloat32Array(1, 0),
+"update": 0,
+"values": [Color(1, 0.0405029, 0.0223527, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_h4y4c"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TheGodot:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TheGodot:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TheGodot:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_6ewtt"]
+resource_name = "right_press"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TheGodot:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0333333, 0.133333, 0.266667),
+"transitions": PackedFloat32Array(0.5, 0.5, 0.5),
+"update": 0,
+"values": [0.0, 1.309, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TheGodot:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.266667),
+"transitions": PackedFloat32Array(1, 0),
+"update": 0,
+"values": [Color(1, 0.0405029, 0.0223527, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_3jx7o"]
+resource_name = "middle_press"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TheGodot:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.266667),
+"transitions": PackedFloat32Array(1, 0),
+"update": 0,
+"values": [Color(1, 0.0405029, 0.0223527, 1), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TheGodot:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(3, 3), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nxwvu"]
+_data = {
+"RESET": SubResource("Animation_h4y4c"),
+"left_press": SubResource("Animation_v4s1v"),
+"middle_press": SubResource("Animation_3jx7o"),
+"right_press": SubResource("Animation_6ewtt")
+}
+
 [node name="TheGodot" type="Node2D"]
+script = ExtResource("1_5ctyl")
 
 [node name="TheGodot" type="Sprite2D" parent="."]
 position = Vector2(578, 290)
@@ -59,3 +230,14 @@ libraries = {
 "": SubResource("AnimationLibrary_0nh5i")
 }
 autoplay = "loop"
+
+[node name="Movement" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_w12jk")
+}
+autoplay = "hover_bob"
+
+[node name="ButtonPresser" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_nxwvu")
+}
