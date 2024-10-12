@@ -52,6 +52,7 @@ func _physics_process(delta: float) -> void:
 		$DashTimer.start()
 		dashes -= 1
 		
+		
 		var x_axis = Input.get_axis("Joystick_Left", "Joystick_Right")
 		var y_axis = Input.get_axis("Joystick_Up", "Joystick_Down")
 		

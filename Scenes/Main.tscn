@@ -16,22 +16,24 @@ metadata/_edit_horizontal_guides_ = [1433.0, 1420.0]
 
 [node name="ColorRect" type="ColorRect" parent="."]
 z_index = -1
-offset_left = -50.0
-offset_top = -11.0
+offset_left = -127.0
+offset_top = -213.0
 offset_right = 4439.0
-offset_bottom = 694.0
+offset_bottom = 741.0
 color = Color(0, 0, 0, 1)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="ColorRect"]
+position = Vector2(0, 207)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ColorRect/StaticBody2D"]
-position = Vector2(2252.17, 673)
+position = Vector2(2320.17, 673)
 shape = SubResource("RectangleShape2D_arccb")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="ColorRect"]
+position = Vector2(0, 207)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ColorRect/StaticBody2D2"]
-position = Vector2(21, 50.5)
+position = Vector2(98, 50.5)
 shape = SubResource("RectangleShape2D_yxtxn")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]

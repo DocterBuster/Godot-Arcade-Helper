@@ -45,8 +45,8 @@ func _process(delta: float) -> void:
 	
 	#Easter Eggs! 
 	
-	if(inputs == 10):
-		GlobalData.shake_camera(5, 5)
+	if(inputs >= 10):
+		GlobalData.shake_camera(inputs, 0.2)
 	
 	if(inputs > 20):
 		GlobalData.swtich_to_player()

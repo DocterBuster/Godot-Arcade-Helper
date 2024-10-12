@@ -4,7 +4,7 @@
 [ext_resource type="Theme" uid="uid://14b1tkxpqm84" path="res://Themes/gamepad_type.tres" id="2_nfc3o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kmg06"]
-size = Vector2(173.333, 28.3333)
+size = Vector2(249.444, 28.3333)
 
 [node name="GamepadType" type="Node2D"]
 scale = Vector2(1.8, 1.8)
@@ -13,8 +13,8 @@ script = ExtResource("1_stxvg")
 [node name="Button" type="Button" parent="."]
 offset_left = -48.0
 offset_top = -3.0
-offset_right = 88.0
-offset_bottom = 6.0
+offset_right = 202.0
+offset_bottom = 26.0
 theme = ExtResource("2_nfc3o")
 text = "(Gamepad Type Here)"
 
@@ -28,5 +28,5 @@ text = "The Gamepad ID: [Input.get_joy_guid(0)] (Will be uniuque for the Arcade!
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(39.4444, 11.3889)
+position = Vector2(77.5, 11.3889)
 shape = SubResource("RectangleShape2D_kmg06")
