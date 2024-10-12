@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://c2a3po05p28d5"]
+[gd_scene load_steps=8 format=3 uid="uid://c2a3po05p28d5"]
 
 [ext_resource type="PackedScene" uid="uid://dqctdvcaijwbg" path="res://Scenes/gamepad_type.tscn" id="1_7lysn"]
 [ext_resource type="PackedScene" uid="uid://dkxvpemqtlv7v" path="res://Scenes/latest_input.tscn" id="2_7bd4g"]
 [ext_resource type="PackedScene" uid="uid://b7jwhu1oqw4rl" path="res://Scenes/the_godot.tscn" id="2_mgjh4"]
 [ext_resource type="PackedScene" uid="uid://cuc7swf74xu58" path="res://DynamicCamera/DynamicCamera.tscn" id="4_sr0yl"]
+[ext_resource type="PackedScene" uid="uid://7yxxkqsdibth" path="res://Scenes/Assets/Platform.tscn" id="5_rk18u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_arccb"]
 size = Vector2(4499.67, 28.3333)
@@ -63,5 +64,17 @@ position = Vector2(0, -67)
 
 [node name="JuiceCamera" parent="CameraMovementTest" index="0"]
 position = Vector2(576, 324)
+
+[node name="Player Colision" type="Node2D" parent="."]
+
+[node name="Platform" parent="Player Colision" instance=ExtResource("5_rk18u")]
+position = Vector2(2176, 429)
+rotation = 1.5708
+scale = Vector2(3.46875, 0.671875)
+
+[node name="Platform2" parent="Player Colision" instance=ExtResource("5_rk18u")]
+position = Vector2(2937, 221)
+rotation = 1.5708
+scale = Vector2(3.46875, 0.671875)
 
 [editable path="CameraMovementTest"]
