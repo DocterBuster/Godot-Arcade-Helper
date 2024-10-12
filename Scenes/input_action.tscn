@@ -1,4 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://comhrt4naqyca"]
+[gd_scene load_steps=5 format=3 uid="uid://comhrt4naqyca"]
+
+[ext_resource type="Theme" uid="uid://14b1tkxpqm84" path="res://Themes/gamepad_type.tres" id="1_fw5aw"]
 
 [sub_resource type="Animation" id="Animation_f5xkh"]
 length = 0.001
@@ -63,6 +65,7 @@ _data = {
 [node name="InputAction" type="Button"]
 offset_right = 41.0
 offset_bottom = 31.0
+theme = ExtResource("1_fw5aw")
 text = "Test"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

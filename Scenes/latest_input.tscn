@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dkxvpemqtlv7v"]
+[gd_scene load_steps=3 format=3 uid="uid://dkxvpemqtlv7v"]
 
 [ext_resource type="Script" path="res://Scripts/latest_input.gd" id="1_oep6x"]
+[ext_resource type="Theme" uid="uid://14b1tkxpqm84" path="res://Themes/gamepad_type.tres" id="2_1kk3m"]
 
 [node name="LatestInput" type="Node2D"]
 scale = Vector2(1.8, 1.8)
@@ -15,6 +16,7 @@ offset_left = -293.0
 offset_top = -42.0
 offset_right = -182.0
 offset_bottom = -19.0
+theme = ExtResource("2_1kk3m")
 text = "Latest Input: (This tells you what Godot can map in the Input list!)"
 metadata/_edit_use_anchors_ = true
 
@@ -25,6 +27,7 @@ offset_left = -297.0
 offset_top = -19.0
 offset_right = 321.0
 offset_bottom = 12.0
+theme = ExtResource("2_1kk3m")
 text = "(Press any Input Source)"
 alignment = 0
 metadata/_edit_use_anchors_ = true
