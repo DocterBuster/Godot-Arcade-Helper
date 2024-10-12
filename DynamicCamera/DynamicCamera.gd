@@ -1,7 +1,7 @@
 extends Node2D
 
 
-const ORIGIN = Vector2(0, 0)
+var ORIGIN = Vector2(0, 0)
 var shake_intensity = 1
 var shake_ease = true
 
@@ -11,7 +11,7 @@ var shake_ease = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	
+	ORIGIN = $JuiceCamera.global_position
 	pass # Replace with function body.
 
 

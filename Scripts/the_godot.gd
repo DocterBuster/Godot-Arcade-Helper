@@ -43,7 +43,11 @@ func _process(delta: float) -> void:
 		$ButtonPresser.play("middle_press")
 		inputs += 1
 	
-	#Easter Egg! 
+	#Easter Eggs! 
+	
+	if(inputs == 10):
+		GlobalData.shake_camera(5, 5)
+	
 	if(inputs > 20):
 		GlobalData.swtich_to_player()
 	

@@ -1,7 +1,9 @@
-[gd_scene load_steps=15 format=3 uid="uid://c31tww2yg02sg"]
+[gd_scene load_steps=17 format=3 uid="uid://c31tww2yg02sg"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_bcqcf"]
 [ext_resource type="Texture2D" uid="uid://cxu5ixys8wuq7" path="res://icon.svg" id="2_0nomn"]
+[ext_resource type="PackedScene" uid="uid://cuc7swf74xu58" path="res://DynamicCamera/DynamicCamera.tscn" id="3_36bp1"]
+[ext_resource type="Theme" uid="uid://14b1tkxpqm84" path="res://Themes/gamepad_type.tres" id="4_67bwi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j2b8u"]
 size = Vector2(126, 124.75)
@@ -46,14 +48,39 @@ _data = {
 
 [sub_resource type="Animation" id="Animation_3jk25"]
 length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
-[sub_resource type="Animation" id="Animation_xagqp"]
-resource_name = "Wall_Bounce"
+[sub_resource type="Animation" id="Animation_qt2vn"]
+resource_name = "Enter_scene"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3.03333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_w12jk"]
 _data = {
-"RESET": SubResource("Animation_3jk25"),
-"Wall_Bounce": SubResource("Animation_xagqp")
+"Enter_scene": SubResource("Animation_qt2vn"),
+"RESET": SubResource("Animation_3jk25")
 }
 
 [sub_resource type="Animation" id="Animation_h4y4c"]
@@ -254,12 +281,34 @@ libraries = {
 }
 autoplay = "loop"
 
-[node name="Movement" type="AnimationPlayer" parent="."]
+[node name="On_enter" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_w12jk")
 }
+autoplay = "Enter_scene"
 
 [node name="ButtonPresser" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_nxwvu")
 }
+
+[node name="CameraMovementTest" parent="." instance=ExtResource("3_36bp1")]
+
+[node name="JuiceCamera" parent="CameraMovementTest" index="0"]
+limit_left = 0
+limit_top = 0
+limit_bottom = 648
+position_smoothing_enabled = true
+position_smoothing_speed = 5.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Info" type="Button" parent="CanvasLayer"]
+offset_left = 888.0
+offset_top = 6.0
+offset_right = 1145.0
+offset_bottom = 37.0
+theme = ExtResource("4_67bwi")
+text = "(Press Top Left Button to Rest)"
+
+[editable path="CameraMovementTest"]
