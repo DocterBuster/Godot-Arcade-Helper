@@ -1,0 +1,157 @@
+[gd_scene load_steps=10 format=3 uid="uid://cuc7swf74xu58"]
+
+[ext_resource type="Script" path="res://DynamicCamera/DynamicCamera.gd" id="1_xetc6"]
+[ext_resource type="Texture2D" uid="uid://cxu5ixys8wuq7" path="res://icon.svg" id="2_sj2ps"]
+
+[sub_resource type="Animation" id="Animation_adarg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("JuiceCamera:zoom")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("JuiceCamera:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_u8jk6"]
+resource_name = "rotate_zoom"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("JuiceCamera:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.733333, 1),
+"transitions": PackedFloat32Array(1, 0.5, 1, 2),
+"update": 0,
+"values": [0.0, -0.174533, -0.20944, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("JuiceCamera:zoom")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.733333, 1),
+"transitions": PackedFloat32Array(1, 0.5, 1, 2),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.1, 1.1), Vector2(1.15, 1.15), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_n0icr"]
+resource_name = "zoom-bounce"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("JuiceCamera:zoom")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(2, 2, 2, 2, 2),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.1, 1.1), Vector2(1, 1), Vector2(1.1, 1.1), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_00bfk"]
+_data = {
+"RESET": SubResource("Animation_adarg"),
+"rotate_zoom": SubResource("Animation_u8jk6"),
+"zoom-bounce": SubResource("Animation_n0icr")
+}
+
+[sub_resource type="Animation" id="Animation_0hyli"]
+resource_name = "Move"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.466667),
+"transitions": PackedFloat32Array(1, -0.5),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_d7vck"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_imp6s"]
+_data = {
+"Move": SubResource("Animation_0hyli"),
+"RESET": SubResource("Animation_d7vck")
+}
+
+[node name="CameraMovementTest" type="Node2D"]
+script = ExtResource("1_xetc6")
+
+[node name="JuiceCamera" type="Camera2D" parent="."]
+ignore_rotation = false
+position_smoothing_speed = 1.0
+
+[node name="ViewportLight" type="Node2D" parent="JuiceCamera"]
+visible = false
+
+[node name="Darkness" type="PointLight2D" parent="JuiceCamera/ViewportLight"]
+position = Vector2(-3, 7)
+scale = Vector2(19.1289, 19.1289)
+energy = 16.0
+blend_mode = 1
+shadow_enabled = true
+texture = ExtResource("2_sj2ps")
+
+[node name="Spotlight" type="PointLight2D" parent="JuiceCamera/ViewportLight"]
+scale = Vector2(1.76563, 1.76563)
+energy = 2.0
+blend_mode = 2
+texture = ExtResource("2_sj2ps")
+
+[node name="ShakeTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_00bfk")
+}
+
+[node name="CameraMover" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_imp6s")
+}
+
+[connection signal="timeout" from="ShakeTimer" to="." method="_on_shake_timer_timeout"]

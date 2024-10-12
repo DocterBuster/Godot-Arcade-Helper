@@ -1,17 +1,38 @@
-[gd_scene load_steps=4 format=3 uid="uid://c2a3po05p28d5"]
+[gd_scene load_steps=6 format=3 uid="uid://c2a3po05p28d5"]
 
 [ext_resource type="PackedScene" uid="uid://dqctdvcaijwbg" path="res://Scenes/gamepad_type.tscn" id="1_7lysn"]
 [ext_resource type="PackedScene" uid="uid://dkxvpemqtlv7v" path="res://Scenes/latest_input.tscn" id="2_7bd4g"]
 [ext_resource type="PackedScene" uid="uid://b7jwhu1oqw4rl" path="res://Scenes/the_godot.tscn" id="2_mgjh4"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_arccb"]
+size = Vector2(4499.67, 28.3333)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yxtxn"]
+size = Vector2(56, 1199)
+
 [node name="Main" type="Node2D"]
+metadata/_edit_vertical_guides_ = [581.0]
+metadata/_edit_horizontal_guides_ = [217.0]
 
 [node name="ColorRect" type="ColorRect" parent="."]
+z_index = -1
 offset_left = -50.0
 offset_top = -11.0
-offset_right = 1164.0
+offset_right = 4439.0
 offset_bottom = 694.0
 color = Color(0, 0, 0, 1)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="ColorRect"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ColorRect/StaticBody2D"]
+position = Vector2(2252.17, 673)
+shape = SubResource("RectangleShape2D_arccb")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="ColorRect"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ColorRect/StaticBody2D2"]
+position = Vector2(21, 50.5)
+shape = SubResource("RectangleShape2D_yxtxn")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -25,7 +46,7 @@ offset_bottom = 40.0
 offset_right = 40.0
 offset_bottom = 23.0
 theme_override_font_sizes/font_size = 20
-text = "Godot Arcade Helper Ver 0.2"
+text = "Godot Arcade Helper Ver 0.3"
 
 [node name="GamepadType" parent="." instance=ExtResource("1_7lysn")]
 position = Vector2(87, 441)

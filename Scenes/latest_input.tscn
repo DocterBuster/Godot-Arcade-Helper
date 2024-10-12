@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://dkxvpemqtlv7v"]
+[gd_scene load_steps=4 format=3 uid="uid://dkxvpemqtlv7v"]
 
 [ext_resource type="Script" path="res://Scripts/latest_input.gd" id="1_oep6x"]
 [ext_resource type="Theme" uid="uid://14b1tkxpqm84" path="res://Themes/gamepad_type.tres" id="2_1kk3m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6qbe2"]
+size = Vector2(616.667, 28.3333)
 
 [node name="LatestInput" type="Node2D"]
 scale = Vector2(1.8, 1.8)
@@ -31,3 +34,9 @@ theme = ExtResource("2_1kk3m")
 text = "(Press any Input Source)"
 alignment = 0
 metadata/_edit_use_anchors_ = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(12.2222, -4.44444)
+shape = SubResource("RectangleShape2D_6qbe2")

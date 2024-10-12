@@ -7,6 +7,10 @@ var drift_threshold = 0.3
 
 const ARCADE_RED = Color(1, 0.041, 0.022)
 
+var inputs : int = 0
+
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	init_pos = global_position
@@ -29,12 +33,21 @@ func _process(delta: float) -> void:
 	if(Input.is_action_just_pressed("Arcade_Left_Button")):
 		$ButtonPresser.stop()
 		$ButtonPresser.play("left_press")
+		inputs += 1
 	elif(Input.is_action_just_pressed("Arcade_Right_Button")):
 		$ButtonPresser.stop()
 		$ButtonPresser.play("right_press")
+		inputs += 1
 	elif(Input.is_action_just_pressed("Arcade_Middle_Button")):
 		$ButtonPresser.stop()
 		$ButtonPresser.play("middle_press")
+		inputs += 1
+	
+	#Easter Egg! 
+	if(inputs > 20):
+		GlobalData.swtich_to_player()
+	
+	#print(inputs)
 	
 	pass
 
