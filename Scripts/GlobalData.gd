@@ -3,6 +3,7 @@ extends Node
 var player = preload("res://Scenes/GodotPlayer.tscn")
 var newplayer
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
