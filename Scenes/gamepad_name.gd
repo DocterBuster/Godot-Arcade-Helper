@@ -8,8 +8,10 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
-
-func _input(event: InputEvent) -> void:
-	pass
 	
+	var connected_controlers = Input.get_connected_joypads()
+	
+	if(connected_controlers.size() > 0):
+		$Button.text = Input.get_joy_name(connected_controlers[0])
+	else:
+		$Button.text = ""
