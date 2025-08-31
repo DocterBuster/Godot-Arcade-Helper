@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://cuc7swf74xu58"]
 
-[ext_resource type="Script" path="res://DynamicCamera/DynamicCamera.gd" id="1_xetc6"]
+[ext_resource type="Script" uid="uid://hwxjwjnhovpf" path="res://DynamicCamera/DynamicCamera.gd" id="1_xetc6"]
 [ext_resource type="Texture2D" uid="uid://cxu5ixys8wuq7" path="res://icon.svg" id="2_sj2ps"]
 
 [sub_resource type="Animation" id="Animation_adarg"]
@@ -75,9 +75,9 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_00bfk"]
 _data = {
-"RESET": SubResource("Animation_adarg"),
-"rotate_zoom": SubResource("Animation_u8jk6"),
-"zoom-bounce": SubResource("Animation_n0icr")
+&"RESET": SubResource("Animation_adarg"),
+&"rotate_zoom": SubResource("Animation_u8jk6"),
+&"zoom-bounce": SubResource("Animation_n0icr")
 }
 
 [sub_resource type="Animation" id="Animation_0hyli"]
@@ -113,8 +113,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_imp6s"]
 _data = {
-"Move": SubResource("Animation_0hyli"),
-"RESET": SubResource("Animation_d7vck")
+&"Move": SubResource("Animation_0hyli"),
+&"RESET": SubResource("Animation_d7vck")
 }
 
 [node name="CameraMovementTest" type="Node2D"]
@@ -146,12 +146,12 @@ one_shot = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_00bfk")
+&"": SubResource("AnimationLibrary_00bfk")
 }
 
 [node name="CameraMover" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_imp6s")
+&"": SubResource("AnimationLibrary_imp6s")
 }
 
 [connection signal="timeout" from="ShakeTimer" to="." method="_on_shake_timer_timeout"]

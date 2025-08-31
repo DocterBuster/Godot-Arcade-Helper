@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=3 uid="uid://b7jwhu1oqw4rl"]
 
-[ext_resource type="Script" path="res://Scripts/the_godot.gd" id="1_5ctyl"]
+[ext_resource type="Script" uid="uid://yum3r00hd4c7" path="res://Scripts/the_godot.gd" id="1_5ctyl"]
 [ext_resource type="Texture2D" uid="uid://cxu5ixys8wuq7" path="res://icon.svg" id="1_swh68"]
 
 [sub_resource type="Animation" id="Animation_xlm8u"]
@@ -37,8 +37,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_0nh5i"]
 _data = {
-"RESET": SubResource("Animation_xlm8u"),
-"loop": SubResource("Animation_67kba")
+&"RESET": SubResource("Animation_xlm8u"),
+&"loop": SubResource("Animation_67kba")
 }
 
 [sub_resource type="Animation" id="Animation_3jk25"]
@@ -75,8 +75,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_w12jk"]
 _data = {
-"RESET": SubResource("Animation_3jk25"),
-"hover_bob": SubResource("Animation_5qp0c")
+&"RESET": SubResource("Animation_3jk25"),
+&"hover_bob": SubResource("Animation_5qp0c")
 }
 
 [sub_resource type="Animation" id="Animation_h4y4c"]
@@ -336,10 +336,10 @@ tracks/4/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_nxwvu"]
 _data = {
-"RESET": SubResource("Animation_h4y4c"),
-"left_press": SubResource("Animation_v4s1v"),
-"middle_press": SubResource("Animation_3jx7o"),
-"right_press": SubResource("Animation_6ewtt")
+&"RESET": SubResource("Animation_h4y4c"),
+&"left_press": SubResource("Animation_v4s1v"),
+&"middle_press": SubResource("Animation_3jx7o"),
+&"right_press": SubResource("Animation_6ewtt")
 }
 
 [node name="TheGodot" type="Node2D"]
@@ -368,17 +368,17 @@ horizontal_alignment = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_0nh5i")
+&"": SubResource("AnimationLibrary_0nh5i")
 }
 autoplay = "loop"
 
 [node name="Movement" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_w12jk")
+&"": SubResource("AnimationLibrary_w12jk")
 }
 autoplay = "hover_bob"
 
 [node name="ButtonPresser" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_nxwvu")
+&"": SubResource("AnimationLibrary_nxwvu")
 }

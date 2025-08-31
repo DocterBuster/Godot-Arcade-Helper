@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dkxvpemqtlv7v"]
 
-[ext_resource type="Script" path="res://Scripts/latest_input.gd" id="1_oep6x"]
+[ext_resource type="Script" uid="uid://bsjaexhe43p1q" path="res://Scripts/latest_input.gd" id="1_oep6x"]
 [ext_resource type="Theme" uid="uid://14b1tkxpqm84" path="res://Themes/gamepad_type.tres" id="2_1kk3m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6qbe2"]

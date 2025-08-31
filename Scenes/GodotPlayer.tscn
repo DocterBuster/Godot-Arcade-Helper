@@ -1,6 +1,6 @@
 [gd_scene load_steps=17 format=3 uid="uid://c31tww2yg02sg"]
 
-[ext_resource type="Script" path="res://Scripts/player.gd" id="1_bcqcf"]
+[ext_resource type="Script" uid="uid://dq0ehg8dme6bi" path="res://Scripts/player.gd" id="1_bcqcf"]
 [ext_resource type="Texture2D" uid="uid://cxu5ixys8wuq7" path="res://icon.svg" id="2_0nomn"]
 [ext_resource type="PackedScene" uid="uid://cuc7swf74xu58" path="res://DynamicCamera/DynamicCamera.tscn" id="3_36bp1"]
 [ext_resource type="Theme" uid="uid://14b1tkxpqm84" path="res://Themes/gamepad_type.tres" id="4_67bwi"]
@@ -42,8 +42,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_0nh5i"]
 _data = {
-"RESET": SubResource("Animation_xlm8u"),
-"loop": SubResource("Animation_67kba")
+&"RESET": SubResource("Animation_xlm8u"),
+&"loop": SubResource("Animation_67kba")
 }
 
 [sub_resource type="Animation" id="Animation_qt2vn"]
@@ -79,8 +79,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_w12jk"]
 _data = {
-"Enter_scene": SubResource("Animation_qt2vn"),
-"RESET": SubResource("Animation_3jk25")
+&"Enter_scene": SubResource("Animation_qt2vn"),
+&"RESET": SubResource("Animation_3jk25")
 }
 
 [sub_resource type="Animation" id="Animation_h4y4c"]
@@ -340,10 +340,10 @@ tracks/4/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_nxwvu"]
 _data = {
-"RESET": SubResource("Animation_h4y4c"),
-"left_press": SubResource("Animation_v4s1v"),
-"middle_press": SubResource("Animation_3jx7o"),
-"right_press": SubResource("Animation_6ewtt")
+&"RESET": SubResource("Animation_h4y4c"),
+&"left_press": SubResource("Animation_v4s1v"),
+&"middle_press": SubResource("Animation_3jx7o"),
+&"right_press": SubResource("Animation_6ewtt")
 }
 
 [node name="TheGodot" type="CharacterBody2D"]
@@ -373,19 +373,19 @@ text = "Yes, thats me, I am the Godot."
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_0nh5i")
+&"": SubResource("AnimationLibrary_0nh5i")
 }
 autoplay = "loop"
 
 [node name="On_enter" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_w12jk")
+&"": SubResource("AnimationLibrary_w12jk")
 }
 autoplay = "Enter_scene"
 
 [node name="ButtonPresser" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_nxwvu")
+&"": SubResource("AnimationLibrary_nxwvu")
 }
 
 [node name="CameraMovementTest" parent="." instance=ExtResource("3_36bp1")]
