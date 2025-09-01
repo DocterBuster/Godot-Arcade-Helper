@@ -16,3 +16,7 @@ An application intended to help WPI students port their Godot-Engine games to th
 
 - **Arcade Helper's Itch.io Page:** https://docterbuster.itch.io/godot-arcade-helper
 - **The IMGD Wiki Section on the Arcade:** https://imgdhub.wpi.edu/en/arcade 
+
+### Credits: 
+
+- [Bashar Alqassar](https://basharalqassar.github.io/) - Original Developer
