@@ -72,7 +72,7 @@ func _physics_process(delta: float) -> void:
 	elif(velocity.x < -SPEED_CAP):
 		velocity.x += SPEED_DECREESE
 	
-	print(velocity)
+	#print(velocity)
 	
 	move_and_slide()
 	

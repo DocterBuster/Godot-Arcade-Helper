@@ -25,9 +25,6 @@ func _process(delta: float) -> void:
 		$TheGodot.modulate = ARCADE_RED
 	else:
 		$TheGodot.modulate = Color(1, 1, 1)
-		
-	
-	
 	
 	
 	if(Input.is_action_just_pressed("Arcade_Left_Button")):

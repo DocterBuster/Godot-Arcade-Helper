@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bo1oe3kykrh67"]
 
-[ext_resource type="Script" path="res://Scenes/gamepad_name.gd" id="1_86ood"]
-[ext_resource type="Theme" uid="uid://14b1tkxpqm84" path="res://Themes/gamepad_type.tres" id="2_fdfw8"]
+[ext_resource type="Script" uid="uid://d8hi5mxdingd" path="res://Scenes/ArcadeInputScripts/gamepad_name.gd" id="1_86ood"]
+[ext_resource type="Theme" uid="uid://14b1tkxpqm84" path="res://Art/Themes/gamepad_type.tres" id="2_fdfw8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kmg06"]
 size = Vector2(249.444, 28.3333)
@@ -19,13 +19,13 @@ offset_bottom = 26.0
 theme = ExtResource("2_fdfw8")
 text = "(Device Name)"
 
-[node name="Label" type="Label" parent="."]
-offset_left = -46.6667
-offset_top = -32.2222
-offset_right = 86.3333
-offset_bottom = -9.22222
-theme_override_font_sizes/font_size = 12
-text = "Input Device Name  Input.get_joy_name(connected_controlers[(Input.get_connected_joypads())])"
+[node name="Label" type="RichTextLabel" parent="."]
+offset_left = -47.0
+offset_top = -32.0
+offset_right = 441.0
+offset_bottom = -9.0
+bbcode_enabled = true
+text = "Input Device Name ID: [color=cyan]<Input.get_joy_guid(device_port : int)>"
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 

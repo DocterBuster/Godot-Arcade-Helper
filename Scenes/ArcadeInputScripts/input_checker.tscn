@@ -1,9 +1,9 @@
 [gd_scene load_steps=2 format=3 uid="uid://detgliaok4uge"]
 
-[ext_resource type="Script" path="res://Scripts/input_checker.gd" id="1_hltvv"]
+[ext_resource type="Script" uid="uid://b2duacqreed20" path="res://Debug/UNUSED/input_checker.gd" id="1_y7owc"]
 
 [node name="InputChecker" type="Node2D"]
-script = ExtResource("1_hltvv")
+script = ExtResource("1_y7owc")
 
 [node name="Delay" type="Timer" parent="."]
 one_shot = true

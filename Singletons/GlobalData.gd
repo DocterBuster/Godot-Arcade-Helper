@@ -1,6 +1,6 @@
 extends Node
 
-var player = preload("res://Scenes/GodotPlayer.tscn")
+var player = preload("res://Scenes/Assets/GodotPlayer.tscn")
 var newplayer
 
 

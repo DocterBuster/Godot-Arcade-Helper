@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dkxvpemqtlv7v"]
 
-[ext_resource type="Script" path="res://Scripts/latest_input.gd" id="1_oep6x"]
-[ext_resource type="Theme" uid="uid://14b1tkxpqm84" path="res://Themes/gamepad_type.tres" id="2_1kk3m"]
+[ext_resource type="Script" uid="uid://bsjaexhe43p1q" path="res://Scenes/ArcadeInputScripts/latest_input.gd" id="1_oep6x"]
+[ext_resource type="Theme" uid="uid://14b1tkxpqm84" path="res://Art/Themes/gamepad_type.tres" id="2_1kk3m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6qbe2"]
 size = Vector2(616.667, 28.3333)

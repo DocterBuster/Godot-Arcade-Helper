@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://comhrt4naqyca"]
 
-[ext_resource type="Theme" uid="uid://14b1tkxpqm84" path="res://Themes/gamepad_type.tres" id="1_fw5aw"]
+[ext_resource type="Theme" uid="uid://14b1tkxpqm84" path="res://Art/Themes/gamepad_type.tres" id="1_jqm7i"]
 
 [sub_resource type="Animation" id="Animation_f5xkh"]
 length = 0.001
@@ -58,18 +58,18 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vlwgr"]
 _data = {
-"RESET": SubResource("Animation_f5xkh"),
-"enter_scene": SubResource("Animation_juynk")
+&"RESET": SubResource("Animation_f5xkh"),
+&"enter_scene": SubResource("Animation_juynk")
 }
 
 [node name="InputAction" type="Button"]
 offset_right = 41.0
 offset_bottom = 31.0
-theme = ExtResource("1_fw5aw")
+theme = ExtResource("1_jqm7i")
 text = "Test"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_vlwgr")
+&"": SubResource("AnimationLibrary_vlwgr")
 }
 autoplay = "enter_scene"
