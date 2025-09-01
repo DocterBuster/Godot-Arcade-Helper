@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=3 uid="uid://b7jwhu1oqw4rl"]
 
-[ext_resource type="Script" uid="uid://yum3r00hd4c7" path="res://Scripts/the_godot.gd" id="1_5ctyl"]
+[ext_resource type="Script" uid="uid://yum3r00hd4c7" path="res://Scenes/Assets/the_godot.gd" id="1_5ctyl"]
 [ext_resource type="Texture2D" uid="uid://cxu5ixys8wuq7" path="res://icon.svg" id="1_swh68"]
 
 [sub_resource type="Animation" id="Animation_xlm8u"]

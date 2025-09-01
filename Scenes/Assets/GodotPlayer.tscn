@@ -1,9 +1,9 @@
 [gd_scene load_steps=17 format=3 uid="uid://c31tww2yg02sg"]
 
-[ext_resource type="Script" uid="uid://dq0ehg8dme6bi" path="res://Scripts/player.gd" id="1_bcqcf"]
-[ext_resource type="Texture2D" uid="uid://cxu5ixys8wuq7" path="res://icon.svg" id="2_0nomn"]
-[ext_resource type="PackedScene" uid="uid://cuc7swf74xu58" path="res://DynamicCamera/DynamicCamera.tscn" id="3_36bp1"]
-[ext_resource type="Theme" uid="uid://14b1tkxpqm84" path="res://Themes/gamepad_type.tres" id="4_67bwi"]
+[ext_resource type="Script" uid="uid://dq0ehg8dme6bi" path="res://Scenes/Assets/player.gd" id="1_8u42o"]
+[ext_resource type="Texture2D" uid="uid://cxu5ixys8wuq7" path="res://icon.svg" id="2_0xjnr"]
+[ext_resource type="PackedScene" uid="uid://cuc7swf74xu58" path="res://Scenes/DynamicCamera/DynamicCamera.tscn" id="3_8cxk0"]
+[ext_resource type="Theme" uid="uid://14b1tkxpqm84" path="res://Art/Themes/gamepad_type.tres" id="4_5j2kv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j2b8u"]
 size = Vector2(126, 124.75)
@@ -347,7 +347,7 @@ _data = {
 }
 
 [node name="TheGodot" type="CharacterBody2D"]
-script = ExtResource("1_bcqcf")
+script = ExtResource("1_8u42o")
 
 [node name="PushBackTimer" type="Timer" parent="."]
 wait_time = 0.15
@@ -358,7 +358,7 @@ wait_time = 0.3
 one_shot = true
 
 [node name="TheGodot" type="Sprite2D" parent="."]
-texture = ExtResource("2_0nomn")
+texture = ExtResource("2_0xjnr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_j2b8u")
@@ -388,7 +388,7 @@ libraries = {
 &"": SubResource("AnimationLibrary_nxwvu")
 }
 
-[node name="CameraMovementTest" parent="." instance=ExtResource("3_36bp1")]
+[node name="CameraMovementTest" parent="." instance=ExtResource("3_8cxk0")]
 
 [node name="JuiceCamera" parent="CameraMovementTest" index="0"]
 limit_left = 0
@@ -403,7 +403,7 @@ offset_left = 888.0
 offset_top = 6.0
 offset_right = 1145.0
 offset_bottom = 37.0
-theme = ExtResource("4_67bwi")
+theme = ExtResource("4_5j2kv")
 text = "(Press Top Left Button to Rest)"
 
 [node name="ButtonPressed" type="Label" parent="."]

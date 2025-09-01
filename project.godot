@@ -18,11 +18,22 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-GlobalData="*res://Scripts/GlobalData.gd"
+GlobalData="*res://Singletons/GlobalData.gd"
 
 [display]
 
 window/stretch/mode="viewport"
+
+[file_customization]
+
+folder_colors={
+"res://Art/": "pink",
+"res://Art/Themes/": "pink",
+"res://Debug/": "green",
+"res://Scenes/": "red",
+"res://Scenes/DynamicCamera/": "red",
+"res://Singletons/": "purple"
+}
 
 [input]
 

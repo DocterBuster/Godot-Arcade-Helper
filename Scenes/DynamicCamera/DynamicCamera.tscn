@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://cuc7swf74xu58"]
 
-[ext_resource type="Script" uid="uid://hwxjwjnhovpf" path="res://DynamicCamera/DynamicCamera.gd" id="1_xetc6"]
+[ext_resource type="Script" uid="uid://hwxjwjnhovpf" path="res://Scenes/DynamicCamera/DynamicCamera.gd" id="1_xetc6"]
 [ext_resource type="Texture2D" uid="uid://cxu5ixys8wuq7" path="res://icon.svg" id="2_sj2ps"]
 
 [sub_resource type="Animation" id="Animation_adarg"]

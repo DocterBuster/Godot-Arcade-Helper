@@ -21,9 +21,6 @@ func _process(delta: float) -> void:
 	#Loop until timer stops
 	if(not $ShakeTimer.is_stopped()):
 		$JuiceCamera.position = Vector2(ORIGIN.x + randf_range(-shake_intensity, shake_intensity), ORIGIN.y + randf_range(-shake_intensity, shake_intensity))
-		
-	
-	
 
 
 

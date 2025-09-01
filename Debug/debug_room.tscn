@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dsgnic4nu27et"]
 
-[ext_resource type="PackedScene" uid="uid://c31tww2yg02sg" path="res://Scenes/GodotPlayer.tscn" id="1_ogqb2"]
+[ext_resource type="PackedScene" uid="uid://c31tww2yg02sg" path="res://Scenes/Assets/GodotPlayer.tscn" id="1_ogqb2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_25kbn"]
 size = Vector2(1229.67, 28.3333)
