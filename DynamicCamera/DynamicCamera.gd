@@ -44,23 +44,3 @@ func _on_shake_timer_timeout() -> void:
 	#Set Position back to Origin
 	$JuiceCamera.position = ORIGIN
 	
-
-
-#Handles the animation of moving between two points
-func move_to_global_position(newPos : Vector2):
-	
-	prev_positon = global_position
-	move_position = newPos
-	#Set animation keys to ease between current and new pos
-	#IN GLOBAL POSITIONS
-	
-	$CameraMover.get_animation("Move").track_set_key_value(0, 0, global_position)
-	$CameraMover.get_animation("Move").track_set_key_value(0, 1, newPos)
-	
-	print($CameraMover.get_animation("Move").track_get_key_value(0, 0))
-	print($CameraMover.get_animation("Move").track_get_key_value(0, 1))
-	
-	$CameraMover.play("Move")
-	
-	#Play that animation!
-	

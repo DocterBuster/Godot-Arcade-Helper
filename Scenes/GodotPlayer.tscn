@@ -394,7 +394,6 @@ libraries = {
 limit_left = 0
 limit_top = 0
 limit_bottom = 648
-position_smoothing_enabled = true
 position_smoothing_speed = 5.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
