@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dqctdvcaijwbg"]
 
-[ext_resource type="Theme" uid="uid://14b1tkxpqm84" path="res://Art/Themes/gamepad_type.tres" id="2_nfc3o"]
+[ext_resource type="Theme" uid="uid://14b1tkxpqm84" path="res://Art/Themes/gamepad_type.tres" id="1_t2n1y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kmg06"]
 size = Vector2(249.444, 28.3333)
@@ -13,15 +13,17 @@ offset_left = -48.0
 offset_top = -3.0
 offset_right = 202.0
 offset_bottom = 26.0
-theme = ExtResource("2_nfc3o")
+theme = ExtResource("1_t2n1y")
 text = "(Gamepad Type Here)"
 
-[node name="Label" type="Label" parent="."]
-offset_left = -46.6667
-offset_top = -32.2222
-offset_right = 86.3333
-offset_bottom = -9.22222
-text = "The Gamepad ID: [Input.get_joy_guid(0)]"
+[node name="Label" type="RichTextLabel" parent="."]
+offset_left = -47.0
+offset_top = -32.0
+offset_right = 320.0
+offset_bottom = -9.0
+scale = Vector2(0.997976, 1.03156)
+bbcode_enabled = true
+text = "[u]The Gamepad ID: [color=cyan][Input.get_joy_guid(0)]"
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 

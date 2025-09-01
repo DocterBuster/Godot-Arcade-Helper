@@ -1,17 +1,15 @@
 extends Node2D
 
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	Input.joy_connection_changed.connect(_on_joypad_connected) 
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+#Called when any device is connected/disconnected 
+func _on_joypad_connected(device: int, connected: bool):
 	
-	var connected_controlers = Input.get_connected_joypads()
-	
-	if(connected_controlers.size() > 0):
-		$Button.text = Input.get_joy_name(connected_controlers[0])
+	if(device > -1):
+		#If there is a device connected, it will be in port 0 
+		var id = Input.get_joy_guid(device)
+		$Button.text = id
 	else:
 		$Button.text = ""

@@ -12,7 +12,6 @@ var shake_ease = true
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	ORIGIN = $JuiceCamera.global_position
-	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -23,8 +22,7 @@ func _process(delta: float) -> void:
 		$JuiceCamera.position = Vector2(ORIGIN.x + randf_range(-shake_intensity, shake_intensity), ORIGIN.y + randf_range(-shake_intensity, shake_intensity))
 
 
-
-
+#Starts a camera shake for an amouunt of time passed 
 func start_screen_shake(intensity : int, seconds : float, ease_out : bool = true) -> void:
 	
 	$ShakeTimer.wait_time = seconds
