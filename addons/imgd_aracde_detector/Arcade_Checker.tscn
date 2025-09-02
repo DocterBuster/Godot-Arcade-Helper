@@ -4,3 +4,18 @@
 
 [node name="ArcadeChecker" type="Node2D"]
 script = ExtResource("1_yo43c")
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+
+[node name="DEBUG_DISPLAY" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="DEBUG_DISPLAY"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 23.0
+grow_horizontal = 0
+text = "DISPLAYED TEXT"
+
+[connection signal="request_completed" from="HTTPRequest" to="." method="_on_http_request_request_completed"]

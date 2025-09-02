@@ -1,1 +1,29 @@
 extends Node
+
+var is_on_arcade : bool = false
+
+const arcade_URL : String = "https://api.github.com/repos/godotengine/godot/releases/latest"
+
+func _ready() -> void:
+	#Connect HTTP Signal
+	$HTTPRequest.request_completed.connect(_on_http_request_request_completed)
+	#Request the page info
+	$HTTPRequest.request(arcade_URL)
+
+func _on_http_request_request_completed(result: int, response_code: int, headers: PackedStringArray, body: PackedByteArray) -> void:
+	
+	#Fetch JSON data
+	var json = JSON.parse_string(body.get_string_from_utf8())
+	print(json["name"])
+	
+	#Only check if the json file has the arcade key
+	if(json.has("arcade")):
+		#Check for JSON tag 
+		if(int(json["arcade"]) == 1):
+			is_on_arcade = true
+		else:
+			is_on_arcade = false
+	
+	
+	#Set Debug Label
+	$DEBUG_DISPLAY/Label.text = str("is_on_arcade = ", is_on_arcade)
