@@ -19,10 +19,15 @@ config/icon="res://icon.svg"
 [autoload]
 
 GlobalData="*res://Singletons/GlobalData.gd"
+Arcade_Checker="*res://addons/imgd_aracde_detector/Arcade_Checker.tscn"
 
 [display]
 
 window/stretch/mode="viewport"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/imgd_aracde_detector/plugin.cfg")
 
 [file_customization]
 
