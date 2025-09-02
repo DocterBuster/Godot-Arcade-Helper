@@ -19,12 +19,11 @@ func _on_http_request_request_completed(result: int, response_code: int, headers
 	var json = JSON.parse_string(body.get_string_from_utf8())
 	
 	#Only check if the json file has the arcade key
+	#(Assuming there is no other tag)
 	if(json.has("arcade")):
-		#Check for JSON tag 
-		if(int(json["arcade"]) == 1):
-			is_on_arcade = true
-		else:
-			is_on_arcade = false
+		is_on_arcade = true
+	else:
+		is_on_arcade = false
 	
 	
 	#Set Debug Label
