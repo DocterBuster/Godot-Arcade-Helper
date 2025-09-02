@@ -17,5 +17,3 @@ offset_left = -40.0
 offset_bottom = 23.0
 grow_horizontal = 0
 text = "DISPLAYED TEXT"
-
-[connection signal="request_completed" from="HTTPRequest" to="." method="_on_http_request_request_completed"]
