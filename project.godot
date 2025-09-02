@@ -11,10 +11,10 @@ config_version=5
 [application]
 
 config/name="Godot Games Arcade Port Helper"
-config/version="0.5.0"
+config/version="0.5.1"
 run/main_scene="res://Scenes/Main.tscn"
 config/features=PackedStringArray("4.4", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="uid://cxu5ixys8wuq7"
 
 [autoload]
 
