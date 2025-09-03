@@ -1,35 +1,20 @@
 extends Node
 
 var is_on_arcade : bool = false
-var arcade_URL : String
+var game_url : String = "NOT ON WEB"
 
 func _ready() -> void:
 	
 	#Get the URL for the arcade
 	if(OS.has_feature("web")):
 		print("Arcade Checker: Web Build Detected!")
-		#Wait a bit for the project to start
-		await get_tree().create_timer(1.0).timeout
-		arcade_URL = JavaScriptBridge.eval("window.location.href")
 		
-		#Connect HTTP Signal
-		$HTTPRequest.request_completed.connect(_on_http_request_request_completed)
-		#Request the page info
-		$HTTPRequest.request(arcade_URL)
-
-func _on_http_request_request_completed(result: int, response_code: int, headers: PackedStringArray, body: PackedByteArray) -> void:
-	
-	print(headers)
-	
-	#Fetch JSON data
-	var json = JSON.parse_string(body.get_string_from_utf8())
-	
-	#Only check if the json file has the arcade key
-	#(Assuming there is no other tag)
-	if(json.has("arcade")):
-		is_on_arcade = true
-	else:
-		is_on_arcade = false
+		#Fetch the game URL information 
+		var doc = JavaScriptBridge.get_interface("document")
+		if(doc):
+			game_url = doc.location.href
+			#If the URL ends with ?arcade, it is on the arcade! 
+			is_on_arcade = game_url.ends_with("?arcade")
 	
 	#Set Debug Label
 	$DEBUG_DISPLAY/Label.text = str("is_on_arcade = ", is_on_arcade)
