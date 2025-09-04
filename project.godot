@@ -37,7 +37,8 @@ folder_colors={
 "res://Debug/": "green",
 "res://Scenes/": "red",
 "res://Scenes/DynamicCamera/": "red",
-"res://Singletons/": "purple"
+"res://Singletons/": "purple",
+"res://addons/": "teal"
 }
 
 [input]
