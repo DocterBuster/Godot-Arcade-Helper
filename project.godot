@@ -11,18 +11,23 @@ config_version=5
 [application]
 
 config/name="Godot Games Arcade Port Helper"
-config/version="0.5.0"
+config/version="0.5.1"
 run/main_scene="res://Scenes/Main.tscn"
 config/features=PackedStringArray("4.4", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="uid://cxu5ixys8wuq7"
 
 [autoload]
 
 GlobalData="*res://Singletons/GlobalData.gd"
+Arcade_Checker="*res://addons/imgd_aracde_detector/Arcade_Checker.tscn"
 
 [display]
 
 window/stretch/mode="viewport"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/imgd_aracde_detector/plugin.cfg")
 
 [file_customization]
 
@@ -32,7 +37,8 @@ folder_colors={
 "res://Debug/": "green",
 "res://Scenes/": "red",
 "res://Scenes/DynamicCamera/": "red",
-"res://Singletons/": "purple"
+"res://Singletons/": "purple",
+"res://addons/": "teal"
 }
 
 [input]
