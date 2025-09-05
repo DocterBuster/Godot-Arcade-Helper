@@ -10,10 +10,11 @@ An application intended to help WPI students port their Godot-Engine games to th
 
 ### Arcade Input 
 
-If your looking for the input map for the arcade, see this image below: 
+If your looking for the input map for the arcade, see this image below for bindings: 
 
 <img width="1102" height="507" alt="GodotArcadeMappings" src="https://github.com/user-attachments/assets/a08585af-7599-4ee8-b39f-0ce2b353c816" />
 
+(You can plug in a game controler to test these localy too!) 
 
 ## Contributing 
 - Feel free to fork for your own purposes! 
@@ -28,5 +29,6 @@ If your looking for the input map for the arcade, see this image below:
 ### Credits: 
 
 - [Bashar Alqassar](https://basharalqassar.github.io/) - Original Developer
+
 
 
