@@ -46,9 +46,16 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Label" type="Label" parent="CanvasLayer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
 offset_right = 40.0
-offset_bottom = 23.0
+offset_bottom = 40.0
+
+[node name="VersionLabel" type="Label" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+
+[node name="GodotVersion" type="Label" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
 theme_override_font_sizes/font_size = 20
 
 [node name="LatestInput" parent="." instance=ExtResource("2_7bd4g")]

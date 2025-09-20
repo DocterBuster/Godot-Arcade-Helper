@@ -5,4 +5,5 @@ func _ready() -> void:
 	
 	##Set the version of the Arcade helper to be visible on the arcade!
 	var version_text = str("Godot Arcade Helper Ver:  ", ProjectSettings.get_setting("application/config/version"))
-	$Label.text = version_text
+	$VBoxContainer/VersionLabel.text = version_text
+	$VBoxContainer/GodotVersion.text = str("Godot Engine Version: ", Engine.get_version_info().major, ".", Engine.get_version_info().minor)
