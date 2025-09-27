@@ -15,14 +15,14 @@ func _process(delta: float) -> void:
 
 
 func shake_camera(intensity : int, seconds : float, ease_out : bool = true):
-	get_node("/root/Main/CameraMovementTest").start_screen_shake(intensity, seconds, ease_out)
+	get_node("/root/Main/ShakeCamera").add_camera_shake(0.4)
 
 func swtich_to_player():
 	var godot = get_node("/root/Main/TheGodot")
 	var spawn_pos = godot.get_node("TheGodot").position
 	
 	
-	get_node("/root/Main/CameraMovementTest").queue_free()
+	get_node("/root/Main/ShakeCamera").queue_free()
 	godot.queue_free()
 	
 	
