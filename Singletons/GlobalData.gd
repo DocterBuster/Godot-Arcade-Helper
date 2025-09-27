@@ -29,7 +29,7 @@ func swtich_to_player():
 	newplayer = player.instantiate()
 	newplayer.position = spawn_pos
 	
-	add_child(newplayer)
+	get_tree().current_scene.add_child(newplayer)
 
 
 func _input(event: InputEvent) -> void:

@@ -1,3 +1,4 @@
+class_name Godot_Player
 extends CharacterBody2D
 
 

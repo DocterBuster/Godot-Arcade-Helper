@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://vy0von3co55m"]
+
+[ext_resource type="Script" uid="uid://dio2livihfftl" path="res://Singletons/SubGameLoader.gd" id="1_11gnv"]
+[ext_resource type="Theme" uid="uid://14b1tkxpqm84" path="res://Art/Themes/gamepad_type.tres" id="1_skqoa"]
+
+[node name="SubGameLoader" type="CanvasLayer"]
+script = ExtResource("1_11gnv")
+
+[node name="SubgameHUD" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true
+
+[node name="Info" type="Button" parent="SubgameHUD"]
+layout_mode = 1
+offset_right = 260.0
+offset_bottom = 31.0
+theme = ExtResource("1_skqoa")
+text = "(Press Top Left Arcade Button to Retrun)"

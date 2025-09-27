@@ -20,6 +20,7 @@ config/icon="uid://cxu5ixys8wuq7"
 
 GlobalData="*res://Singletons/GlobalData.gd"
 Arcade_Checker="*res://addons/imgd_aracde_detector/Arcade_Checker.tscn"
+SubGameLoader="*res://Singletons/SubGameLoader.tscn"
 
 [display]
 

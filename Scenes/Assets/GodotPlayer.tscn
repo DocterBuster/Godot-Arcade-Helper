@@ -399,12 +399,14 @@ position_smoothing_speed = 5.0
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Info" type="Button" parent="CanvasLayer"]
-offset_left = 888.0
-offset_top = 6.0
-offset_right = 1145.0
-offset_bottom = 37.0
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -308.0
+offset_bottom = 31.0
+grow_horizontal = 0
 theme = ExtResource("4_5j2kv")
-text = "(Press Top Left Button to Rest)"
+text = "(Press Top Left Arcade Button to Reset)"
 
 [node name="ButtonPressed" type="Label" parent="."]
 visible = false

@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://c2a3po05p28d5"]
+[gd_scene load_steps=9 format=3 uid="uid://c2a3po05p28d5"]
 
 [ext_resource type="Script" uid="uid://bm38jthn307hg" path="res://Scenes/ArcadeInputScripts/Version_Info.gd" id="1_pad5b"]
 [ext_resource type="PackedScene" uid="uid://dkxvpemqtlv7v" path="res://Scenes/ArcadeInputScripts/latest_input.tscn" id="2_7bd4g"]
 [ext_resource type="PackedScene" uid="uid://b7jwhu1oqw4rl" path="res://Scenes/Assets/the_godot.tscn" id="2_mgjh4"]
 [ext_resource type="Script" uid="uid://b51webrqoaxha" path="res://SubGames/BreakOut/DEBUG/ShakeCamera.gd" id="5_pbw6q"]
 [ext_resource type="PackedScene" uid="uid://7yxxkqsdibth" path="res://Scenes/Assets/Platform.tscn" id="5_rk18u"]
+[ext_resource type="PackedScene" uid="uid://b4f7josomvkmf" path="res://Scenes/Assets/SubGameWarp.tscn" id="6_v1gob"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_arccb"]
 size = Vector2(4499.67, 28.3333)
@@ -79,3 +80,7 @@ scale = Vector2(3.46875, 0.671875)
 [node name="ShakeCamera" type="Camera2D" parent="."]
 anchor_mode = 0
 script = ExtResource("5_pbw6q")
+
+[node name="SubGameWarp" parent="." instance=ExtResource("6_v1gob")]
+position = Vector2(3985, 203)
+warp_scene = "res://SubGames/BreakOut/DEBUG/MAIN.tscn"
