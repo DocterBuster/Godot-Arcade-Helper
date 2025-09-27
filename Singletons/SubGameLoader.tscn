@@ -1,9 +1,24 @@
-[gd_scene load_steps=3 format=3 uid="uid://vy0von3co55m"]
+[gd_scene load_steps=7 format=3 uid="uid://vy0von3co55m"]
 
 [ext_resource type="Script" uid="uid://dio2livihfftl" path="res://Singletons/SubGameLoader.gd" id="1_11gnv"]
 [ext_resource type="Theme" uid="uid://14b1tkxpqm84" path="res://Art/Themes/gamepad_type.tres" id="1_skqoa"]
+[ext_resource type="Shader" uid="uid://d2l11wakxsjeh" path="res://Singletons/StaticEffect.gdshader" id="3_85lh1"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_85lh1"]
+noise_type = 2
+frequency = 0.3325
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_djwha"]
+noise = SubResource("FastNoiseLite_85lh1")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_djwha"]
+shader = ExtResource("3_85lh1")
+shader_parameter/Noise = SubResource("NoiseTexture2D_djwha")
+shader_parameter/Transparency = 0.155
+shader_parameter/Slow = 25.0
 
 [node name="SubGameLoader" type="CanvasLayer"]
+layer = 100
 script = ExtResource("1_11gnv")
 
 [node name="SubgameHUD" type="Control" parent="."]
@@ -21,3 +36,12 @@ offset_right = 260.0
 offset_bottom = 31.0
 theme = ExtResource("1_skqoa")
 text = "(Press Top Left Arcade Button to Retrun)"
+
+[node name="StaticEffect" type="ColorRect" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_djwha")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
