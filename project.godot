@@ -38,6 +38,7 @@ folder_colors={
 "res://Scenes/": "red",
 "res://Scenes/DynamicCamera/": "red",
 "res://Singletons/": "purple",
+"res://SubGames/": "orange",
 "res://addons/": "teal"
 }
 

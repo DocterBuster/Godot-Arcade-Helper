@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://bdkf85vv4bmt1"]
+
+[ext_resource type="Script" uid="uid://c16aprmv7qsbi" path="res://Scenes/ball.gd" id="1_7nh6h"]
+[ext_resource type="PackedScene" uid="uid://ybwt7xc8p7w4" path="res://Art/TechArt/AfterImage.tscn" id="2_eb1ap"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_27lt3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rmwm4"]
+size = Vector2(20, 21)
+
+[node name="Ball" type="CharacterBody2D"]
+script = ExtResource("1_7nh6h")
+
+[node name="AfterImage" parent="." instance=ExtResource("2_eb1ap")]
+texture = SubResource("CanvasTexture_27lt3")
+
+[node name="TextureRect" type="ColorRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -10.0
+offset_top = -10.5
+offset_right = 10.0
+offset_bottom = 10.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_rmwm4")

@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://crocp3ak173y2"]
+
+[ext_resource type="Script" uid="uid://ums05uxensrh" path="res://Scenes/paddle.gd" id="1_8wypp"]
+[ext_resource type="PackedScene" uid="uid://ybwt7xc8p7w4" path="res://Art/TechArt/AfterImage.tscn" id="2_1u0e0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wl6yx"]
+size = Vector2(91, 21)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_1u0e0"]
+
+[node name="Paddle" type="CharacterBody2D"]
+platform_on_leave = 2
+script = ExtResource("1_8wypp")
+
+[node name="TextureRect" type="ColorRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -45.5
+offset_top = -10.5
+offset_right = 45.5
+offset_bottom = 10.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_wl6yx")
+
+[node name="AfterImage" parent="." instance=ExtResource("2_1u0e0")]
+texture = SubResource("CanvasTexture_1u0e0")
