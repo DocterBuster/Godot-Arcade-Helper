@@ -1,0 +1,445 @@
+[gd_scene load_steps=11 format=3 uid="uid://4pejxubyd5d1"]
+
+[ext_resource type="PackedScene" uid="uid://crocp3ak173y2" path="res://SubGames/BreakOut/Scenes/Paddle.tscn" id="1_mc11i"]
+[ext_resource type="Shader" uid="uid://5dpi2qg6r817" path="res://SubGames/BreakOut/DEBUG/CRT.gdshader" id="1_wg23m"]
+[ext_resource type="PackedScene" uid="uid://bdkf85vv4bmt1" path="res://SubGames/BreakOut/Scenes/Ball.tscn" id="2_vjstj"]
+[ext_resource type="Script" uid="uid://c1xvdfnd46rkh" path="res://SubGames/BreakOut/DEBUG/wall.gd" id="2_x8l4x"]
+[ext_resource type="PackedScene" uid="uid://c3dcxxlsaq8dr" path="res://SubGames/BreakOut/Scenes/Block.tscn" id="3_lsr2u"]
+[ext_resource type="Script" uid="uid://b51webrqoaxha" path="res://SubGames/BreakOut/DEBUG/ShakeCamera.gd" id="6_2o4jp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mc11i"]
+size = Vector2(1152, 19)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vjstj"]
+size = Vector2(24, 687)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lsr2u"]
+size = Vector2(1152, 19)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2o4jp"]
+shader = ExtResource("1_wg23m")
+shader_parameter/screen_resolution = Vector2(480, 270)
+shader_parameter/scanline_intensity = 0.3
+shader_parameter/color_bleed_weight = 0.35
+
+[node name="Main" type="Node2D"]
+
+[node name="Paddle" parent="." instance=ExtResource("1_mc11i")]
+position = Vector2(574, 604)
+
+[node name="LevelBounds" type="Node2D" parent="."]
+
+[node name="Wall" type="StaticBody2D" parent="LevelBounds"]
+script = ExtResource("2_x8l4x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelBounds/Wall"]
+position = Vector2(576, -10)
+shape = SubResource("RectangleShape2D_mc11i")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="LevelBounds/Wall"]
+position = Vector2(1164, 323.5)
+shape = SubResource("RectangleShape2D_vjstj")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="LevelBounds/Wall"]
+position = Vector2(-12, 324)
+shape = SubResource("RectangleShape2D_vjstj")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="LevelBounds/Wall"]
+position = Vector2(576, 674.5)
+shape = SubResource("RectangleShape2D_lsr2u")
+debug_color = Color(0.87058824, 0, 0, 0.41960785)
+
+[node name="OutOfBounds" type="Area2D" parent="LevelBounds"]
+
+[node name="Ball" parent="." node_paths=PackedStringArray("camera") instance=ExtResource("2_vjstj")]
+position = Vector2(274, 397)
+camera = NodePath("../ShakeCamera")
+
+[node name="BLOCKS" type="Node2D" parent="."]
+position = Vector2(-26, 48)
+metadata/_edit_group_ = true
+
+[node name="Block" parent="BLOCKS" instance=ExtResource("3_lsr2u")]
+position = Vector2(224, 58)
+
+[node name="Block2" parent="BLOCKS" instance=ExtResource("3_lsr2u")]
+position = Vector2(224, 85)
+
+[node name="Block3" parent="BLOCKS" instance=ExtResource("3_lsr2u")]
+position = Vector2(224, 112)
+
+[node name="Block4" parent="BLOCKS" instance=ExtResource("3_lsr2u")]
+position = Vector2(224, 139)
+
+[node name="Block5" parent="BLOCKS" instance=ExtResource("3_lsr2u")]
+position = Vector2(224, 166)
+
+[node name="Block6" parent="BLOCKS" instance=ExtResource("3_lsr2u")]
+position = Vector2(224, 193)
+
+[node name="Block7" parent="BLOCKS" instance=ExtResource("3_lsr2u")]
+position = Vector2(224, 220)
+
+[node name="Block8" parent="BLOCKS" instance=ExtResource("3_lsr2u")]
+position = Vector2(224, 247)
+
+[node name="Block9" parent="BLOCKS" instance=ExtResource("3_lsr2u")]
+position = Vector2(224, 275)
+
+[node name="Block10" parent="BLOCKS" instance=ExtResource("3_lsr2u")]
+position = Vector2(224, 302)
+
+[node name="Block11" parent="BLOCKS" instance=ExtResource("3_lsr2u")]
+position = Vector2(292, 58)
+
+[node name="Block12" parent="BLOCKS" instance=ExtResource("3_lsr2u")]
+position = Vector2(292, 85)
+
+[node name="Block13" parent="BLOCKS" instance=ExtResource("3_lsr2u")]
+position = Vector2(292, 112)
+
+[node name="Block14" parent="BLOCKS" instance=ExtResource("3_lsr2u")]
+position = Vector2(292, 139)
+
+[node name="Block15" parent="BLOCKS" instance=ExtResource("3_lsr2u")]
+position = Vector2(292, 166)
+
+[node name="Block16" parent="BLOCKS" instance=ExtResource("3_lsr2u")]
+position = Vector2(292, 193)
+
+[node name="Block17" parent="BLOCKS" instance=ExtResource("3_lsr2u")]
+position = Vector2(292, 220)
+
+[node name="Block18" parent="BLOCKS" instance=ExtResource("3_lsr2u")]
+position = Vector2(292, 247)
+
+[node name="Block19" parent="BLOCKS" instance=ExtResource("3_lsr2u")]
+position = Vector2(292, 275)
+
+[node name="Block20" parent="BLOCKS" instance=ExtResource("3_lsr2u")]
+position = Vector2(292, 302)
+
+[node name="Block21" parent="BLOCKS" instance=ExtResource("3_lsr2u")]
+position = Vector2(360, 58)
+
+[node name="Block22" parent="BLOCKS" instance=ExtResource("3_lsr2u")]
+position = Vector2(360, 85)
+
+[node name="Block23" parent="BLOCKS" instance=ExtResource("3_lsr2u")]
+position = Vector2(360, 112)
+
+[node name="Block24" parent="BLOCKS" instance=ExtResource("3_lsr2u")]
+position = Vector2(360, 139)
+
+[node name="Block25" parent="BLOCKS" instance=ExtResource("3_lsr2u")]
+position = Vector2(360, 166)
+
+[node name="Block26" parent="BLOCKS" instance=ExtResource("3_lsr2u")]
+position = Vector2(360, 193)
+
+[node name="Block27" parent="BLOCKS" instance=ExtResource("3_lsr2u")]
+position = Vector2(360, 220)
+
+[node name="Block28" parent="BLOCKS" instance=ExtResource("3_lsr2u")]
+position = Vector2(360, 247)
+
+[node name="Block29" parent="BLOCKS" instance=ExtResource("3_lsr2u")]
+position = Vector2(360, 275)
+
+[node name="Block30" parent="BLOCKS" instance=ExtResource("3_lsr2u")]
+position = Vector2(360, 302)
+
+[node name="Block31" parent="BLOCKS" instance=ExtResource("3_lsr2u")]
+position = Vector2(428, 58)
+
+[node name="Block32" parent="BLOCKS" instance=ExtResource("3_lsr2u")]
+position = Vector2(428, 85)
+
+[node name="Block33" parent="BLOCKS" instance=ExtResource("3_lsr2u")]
+position = Vector2(428, 112)
+
+[node name="Block34" parent="BLOCKS" instance=ExtResource("3_lsr2u")]
+position = Vector2(428, 139)
+
+[node name="Block35" parent="BLOCKS" instance=ExtResource("3_lsr2u")]
+position = Vector2(428, 166)
+
+[node name="Block36" parent="BLOCKS" instance=ExtResource("3_lsr2u")]
+position = Vector2(428, 193)
+
+[node name="Block37" parent="BLOCKS" instance=ExtResource("3_lsr2u")]
+position = Vector2(428, 220)
+
+[node name="Block38" parent="BLOCKS" instance=ExtResource("3_lsr2u")]
+position = Vector2(428, 247)
+
+[node name="Block39" parent="BLOCKS" instance=ExtResource("3_lsr2u")]
+position = Vector2(428, 275)
+
+[node name="Block40" parent="BLOCKS" instance=ExtResource("3_lsr2u")]
+position = Vector2(428, 302)
+
+[node name="Block41" parent="BLOCKS" instance=ExtResource("3_lsr2u")]
+position = Vector2(498, 58)
+
+[node name="Block42" parent="BLOCKS" instance=ExtResource("3_lsr2u")]
+position = Vector2(498, 85)
+
+[node name="Block43" parent="BLOCKS" instance=ExtResource("3_lsr2u")]
+position = Vector2(498, 112)
+
+[node name="Block44" parent="BLOCKS" instance=ExtResource("3_lsr2u")]
+position = Vector2(498, 139)
+
+[node name="Block45" parent="BLOCKS" instance=ExtResource("3_lsr2u")]
+position = Vector2(498, 166)
+
+[node name="Block46" parent="BLOCKS" instance=ExtResource("3_lsr2u")]
+position = Vector2(498, 193)
+
+[node name="Block47" parent="BLOCKS" instance=ExtResource("3_lsr2u")]
+position = Vector2(498, 220)
+
+[node name="Block48" parent="BLOCKS" instance=ExtResource("3_lsr2u")]
+position = Vector2(498, 247)
+
+[node name="Block49" parent="BLOCKS" instance=ExtResource("3_lsr2u")]
+position = Vector2(498, 275)
+
+[node name="Block50" parent="BLOCKS" instance=ExtResource("3_lsr2u")]
+position = Vector2(498, 302)
+
+[node name="Block51" parent="BLOCKS" instance=ExtResource("3_lsr2u")]
+position = Vector2(566, 58)
+
+[node name="Block52" parent="BLOCKS" instance=ExtResource("3_lsr2u")]
+position = Vector2(566, 85)
+
+[node name="Block53" parent="BLOCKS" instance=ExtResource("3_lsr2u")]
+position = Vector2(566, 112)
+
+[node name="Block54" parent="BLOCKS" instance=ExtResource("3_lsr2u")]
+position = Vector2(566, 139)
+
+[node name="Block55" parent="BLOCKS" instance=ExtResource("3_lsr2u")]
+position = Vector2(566, 166)
+
+[node name="Block56" parent="BLOCKS" instance=ExtResource("3_lsr2u")]
+position = Vector2(566, 193)
+
+[node name="Block57" parent="BLOCKS" instance=ExtResource("3_lsr2u")]
+position = Vector2(566, 220)
+
+[node name="Block58" parent="BLOCKS" instance=ExtResource("3_lsr2u")]
+position = Vector2(566, 247)
+
+[node name="Block59" parent="BLOCKS" instance=ExtResource("3_lsr2u")]
+position = Vector2(566, 275)
+
+[node name="Block60" parent="BLOCKS" instance=ExtResource("3_lsr2u")]
+position = Vector2(566, 302)
+
+[node name="Block61" parent="BLOCKS" instance=ExtResource("3_lsr2u")]
+position = Vector2(634, 58)
+
+[node name="Block62" parent="BLOCKS" instance=ExtResource("3_lsr2u")]
+position = Vector2(634, 85)
+
+[node name="Block63" parent="BLOCKS" instance=ExtResource("3_lsr2u")]
+position = Vector2(634, 112)
+
+[node name="Block64" parent="BLOCKS" instance=ExtResource("3_lsr2u")]
+position = Vector2(634, 139)
+
+[node name="Block65" parent="BLOCKS" instance=ExtResource("3_lsr2u")]
+position = Vector2(634, 166)
+
+[node name="Block66" parent="BLOCKS" instance=ExtResource("3_lsr2u")]
+position = Vector2(634, 193)
+
+[node name="Block67" parent="BLOCKS" instance=ExtResource("3_lsr2u")]
+position = Vector2(634, 220)
+
+[node name="Block68" parent="BLOCKS" instance=ExtResource("3_lsr2u")]
+position = Vector2(634, 247)
+
+[node name="Block69" parent="BLOCKS" instance=ExtResource("3_lsr2u")]
+position = Vector2(634, 275)
+
+[node name="Block70" parent="BLOCKS" instance=ExtResource("3_lsr2u")]
+position = Vector2(634, 302)
+
+[node name="Block71" parent="BLOCKS" instance=ExtResource("3_lsr2u")]
+position = Vector2(702, 58)
+
+[node name="Block72" parent="BLOCKS" instance=ExtResource("3_lsr2u")]
+position = Vector2(702, 85)
+
+[node name="Block73" parent="BLOCKS" instance=ExtResource("3_lsr2u")]
+position = Vector2(702, 112)
+
+[node name="Block74" parent="BLOCKS" instance=ExtResource("3_lsr2u")]
+position = Vector2(702, 139)
+
+[node name="Block75" parent="BLOCKS" instance=ExtResource("3_lsr2u")]
+position = Vector2(702, 166)
+
+[node name="Block76" parent="BLOCKS" instance=ExtResource("3_lsr2u")]
+position = Vector2(702, 193)
+
+[node name="Block77" parent="BLOCKS" instance=ExtResource("3_lsr2u")]
+position = Vector2(702, 220)
+
+[node name="Block78" parent="BLOCKS" instance=ExtResource("3_lsr2u")]
+position = Vector2(702, 247)
+
+[node name="Block79" parent="BLOCKS" instance=ExtResource("3_lsr2u")]
+position = Vector2(702, 275)
+
+[node name="Block80" parent="BLOCKS" instance=ExtResource("3_lsr2u")]
+position = Vector2(702, 302)
+
+[node name="Block81" parent="BLOCKS" instance=ExtResource("3_lsr2u")]
+position = Vector2(770, 58)
+
+[node name="Block82" parent="BLOCKS" instance=ExtResource("3_lsr2u")]
+position = Vector2(770, 85)
+
+[node name="Block83" parent="BLOCKS" instance=ExtResource("3_lsr2u")]
+position = Vector2(770, 112)
+
+[node name="Block84" parent="BLOCKS" instance=ExtResource("3_lsr2u")]
+position = Vector2(770, 139)
+
+[node name="Block85" parent="BLOCKS" instance=ExtResource("3_lsr2u")]
+position = Vector2(770, 166)
+
+[node name="Block86" parent="BLOCKS" instance=ExtResource("3_lsr2u")]
+position = Vector2(770, 193)
+
+[node name="Block87" parent="BLOCKS" instance=ExtResource("3_lsr2u")]
+position = Vector2(770, 220)
+
+[node name="Block88" parent="BLOCKS" instance=ExtResource("3_lsr2u")]
+position = Vector2(770, 247)
+
+[node name="Block89" parent="BLOCKS" instance=ExtResource("3_lsr2u")]
+position = Vector2(770, 275)
+
+[node name="Block90" parent="BLOCKS" instance=ExtResource("3_lsr2u")]
+position = Vector2(770, 302)
+
+[node name="Block91" parent="BLOCKS" instance=ExtResource("3_lsr2u")]
+position = Vector2(838, 58)
+
+[node name="Block92" parent="BLOCKS" instance=ExtResource("3_lsr2u")]
+position = Vector2(838, 85)
+
+[node name="Block93" parent="BLOCKS" instance=ExtResource("3_lsr2u")]
+position = Vector2(838, 112)
+
+[node name="Block94" parent="BLOCKS" instance=ExtResource("3_lsr2u")]
+position = Vector2(838, 139)
+
+[node name="Block95" parent="BLOCKS" instance=ExtResource("3_lsr2u")]
+position = Vector2(838, 166)
+
+[node name="Block96" parent="BLOCKS" instance=ExtResource("3_lsr2u")]
+position = Vector2(838, 193)
+
+[node name="Block97" parent="BLOCKS" instance=ExtResource("3_lsr2u")]
+position = Vector2(838, 220)
+
+[node name="Block98" parent="BLOCKS" instance=ExtResource("3_lsr2u")]
+position = Vector2(838, 247)
+
+[node name="Block99" parent="BLOCKS" instance=ExtResource("3_lsr2u")]
+position = Vector2(838, 275)
+
+[node name="Block100" parent="BLOCKS" instance=ExtResource("3_lsr2u")]
+position = Vector2(838, 302)
+
+[node name="Block101" parent="BLOCKS" instance=ExtResource("3_lsr2u")]
+position = Vector2(906, 58)
+
+[node name="Block102" parent="BLOCKS" instance=ExtResource("3_lsr2u")]
+position = Vector2(906, 85)
+
+[node name="Block103" parent="BLOCKS" instance=ExtResource("3_lsr2u")]
+position = Vector2(906, 112)
+
+[node name="Block104" parent="BLOCKS" instance=ExtResource("3_lsr2u")]
+position = Vector2(906, 139)
+
+[node name="Block105" parent="BLOCKS" instance=ExtResource("3_lsr2u")]
+position = Vector2(906, 166)
+
+[node name="Block106" parent="BLOCKS" instance=ExtResource("3_lsr2u")]
+position = Vector2(906, 193)
+
+[node name="Block107" parent="BLOCKS" instance=ExtResource("3_lsr2u")]
+position = Vector2(906, 220)
+
+[node name="Block108" parent="BLOCKS" instance=ExtResource("3_lsr2u")]
+position = Vector2(906, 247)
+
+[node name="Block109" parent="BLOCKS" instance=ExtResource("3_lsr2u")]
+position = Vector2(906, 275)
+
+[node name="Block110" parent="BLOCKS" instance=ExtResource("3_lsr2u")]
+position = Vector2(906, 302)
+
+[node name="Block111" parent="BLOCKS" instance=ExtResource("3_lsr2u")]
+position = Vector2(974, 58)
+
+[node name="Block112" parent="BLOCKS" instance=ExtResource("3_lsr2u")]
+position = Vector2(974, 85)
+
+[node name="Block113" parent="BLOCKS" instance=ExtResource("3_lsr2u")]
+position = Vector2(974, 112)
+
+[node name="Block114" parent="BLOCKS" instance=ExtResource("3_lsr2u")]
+position = Vector2(974, 139)
+
+[node name="Block115" parent="BLOCKS" instance=ExtResource("3_lsr2u")]
+position = Vector2(974, 166)
+
+[node name="Block116" parent="BLOCKS" instance=ExtResource("3_lsr2u")]
+position = Vector2(974, 193)
+
+[node name="Block117" parent="BLOCKS" instance=ExtResource("3_lsr2u")]
+position = Vector2(974, 220)
+
+[node name="Block118" parent="BLOCKS" instance=ExtResource("3_lsr2u")]
+position = Vector2(974, 247)
+
+[node name="Block119" parent="BLOCKS" instance=ExtResource("3_lsr2u")]
+position = Vector2(974, 275)
+
+[node name="Block120" parent="BLOCKS" instance=ExtResource("3_lsr2u")]
+position = Vector2(974, 302)
+
+[node name="ShakeCamera" type="Camera2D" parent="."]
+anchor_mode = 0
+script = ExtResource("6_2o4jp")
+
+[node name="Background" type="CanvasLayer" parent="ShakeCamera"]
+layer = -1
+follow_viewport_enabled = true
+
+[node name="TextureRect" type="ColorRect" parent="ShakeCamera/Background"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
+
+[node name="CRT-Shader" type="ColorRect" parent="ShakeCamera"]
+z_index = 10
+material = SubResource("ShaderMaterial_2o4jp")
+offset_right = 1152.0
+offset_bottom = 648.0

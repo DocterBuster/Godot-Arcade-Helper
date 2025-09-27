@@ -41,10 +41,10 @@ func _process(delta: float) -> void:
 		inputs += 1
 	
 	#Easter Eggs! 
-	if(inputs >= 10 and (Input.is_action_just_pressed("Arcade_Left_Button") or Input.is_action_just_pressed("Arcade_Right_Button") or Input.is_action_just_pressed("Arcade_Middle_Button"))):
-		GlobalData.shake_camera((inputs - 10), 1, false)
+	if(inputs >= 6 and (Input.is_action_just_pressed("Arcade_Left_Button") or Input.is_action_just_pressed("Arcade_Right_Button") or Input.is_action_just_pressed("Arcade_Middle_Button"))):
+		GlobalData.shake_camera((inputs*inputs), 0.2, false)
 	
-	if(inputs > 20):
+	if(inputs > 15):
 		GlobalData.swtich_to_player()
 	
 	#print(inputs)

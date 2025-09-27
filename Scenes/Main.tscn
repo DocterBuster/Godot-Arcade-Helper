@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://c2a3po05p28d5"]
+[gd_scene load_steps=9 format=3 uid="uid://c2a3po05p28d5"]
 
 [ext_resource type="Script" uid="uid://bm38jthn307hg" path="res://Scenes/ArcadeInputScripts/Version_Info.gd" id="1_pad5b"]
 [ext_resource type="PackedScene" uid="uid://dkxvpemqtlv7v" path="res://Scenes/ArcadeInputScripts/latest_input.tscn" id="2_7bd4g"]
 [ext_resource type="PackedScene" uid="uid://b7jwhu1oqw4rl" path="res://Scenes/Assets/the_godot.tscn" id="2_mgjh4"]
-[ext_resource type="PackedScene" uid="uid://cuc7swf74xu58" path="res://Scenes/DynamicCamera/DynamicCamera.tscn" id="4_sr0yl"]
+[ext_resource type="Script" uid="uid://b51webrqoaxha" path="res://SubGames/BreakOut/DEBUG/ShakeCamera.gd" id="5_pbw6q"]
 [ext_resource type="PackedScene" uid="uid://7yxxkqsdibth" path="res://Scenes/Assets/Platform.tscn" id="5_rk18u"]
+[ext_resource type="PackedScene" uid="uid://b4f7josomvkmf" path="res://Scenes/Assets/SubGameWarp.tscn" id="6_v1gob"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_arccb"]
 size = Vector2(4499.67, 28.3333)
@@ -46,9 +47,16 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Label" type="Label" parent="CanvasLayer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
 offset_right = 40.0
-offset_bottom = 23.0
+offset_bottom = 40.0
+
+[node name="VersionLabel" type="Label" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+
+[node name="GodotVersion" type="Label" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
 theme_override_font_sizes/font_size = 20
 
 [node name="LatestInput" parent="." instance=ExtResource("2_7bd4g")]
@@ -56,11 +64,6 @@ position = Vector2(541, 618)
 
 [node name="TheGodot" parent="." instance=ExtResource("2_mgjh4")]
 position = Vector2(0, -67)
-
-[node name="CameraMovementTest" parent="." instance=ExtResource("4_sr0yl")]
-
-[node name="JuiceCamera" parent="CameraMovementTest" index="0"]
-position = Vector2(576, 324)
 
 [node name="Player Colision" type="Node2D" parent="."]
 
@@ -74,4 +77,10 @@ position = Vector2(2937, 221)
 rotation = 1.5708
 scale = Vector2(3.46875, 0.671875)
 
-[editable path="CameraMovementTest"]
+[node name="ShakeCamera" type="Camera2D" parent="."]
+anchor_mode = 0
+script = ExtResource("5_pbw6q")
+
+[node name="SubGameWarp" parent="." instance=ExtResource("6_v1gob")]
+position = Vector2(3985, 203)
+warp_scene = "res://SubGames/BreakOut/DEBUG/MAIN.tscn"

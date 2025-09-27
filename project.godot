@@ -11,15 +11,16 @@ config_version=5
 [application]
 
 config/name="Godot Games Arcade Port Helper"
-config/version="0.5.1"
+config/version="0.6.0"
 run/main_scene="res://Scenes/Main.tscn"
-config/features=PackedStringArray("4.4", "Forward Plus")
+config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="uid://cxu5ixys8wuq7"
 
 [autoload]
 
 GlobalData="*res://Singletons/GlobalData.gd"
 Arcade_Checker="*res://addons/imgd_aracde_detector/Arcade_Checker.tscn"
+SubGameLoader="*res://Singletons/SubGameLoader.tscn"
 
 [display]
 
@@ -38,6 +39,7 @@ folder_colors={
 "res://Scenes/": "red",
 "res://Scenes/DynamicCamera/": "red",
 "res://Singletons/": "purple",
+"res://SubGames/": "orange",
 "res://addons/": "teal"
 }
 

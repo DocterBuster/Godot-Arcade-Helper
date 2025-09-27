@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://drwher2gfym8b"]
+
+[sub_resource type="Curve" id="Curve_ahp3b"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_wrdbn"]
+curve = SubResource("Curve_ahp3b")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ahp3b"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 14.45
+angular_velocity_min = -20.000015
+angular_velocity_max = 19.999983
+gravity = Vector3(0, 0, 0)
+scale_min = 5.0
+scale_max = 5.0
+alpha_curve = SubResource("CurveTexture_wrdbn")
+
+[node name="BallTrail" type="GPUParticles2D"]
+amount = 12
+lifetime = 3.0
+process_material = SubResource("ParticleProcessMaterial_ahp3b")
